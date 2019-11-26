@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/BioJulia/FMIndexes.jl.svg?branch=master)](https://travis-ci.org/BioJulia/FMIndexes.jl)
 [![GitHub latest release](https://img.shields.io/badge/latest-v0.2.0-blue)](https://github.com/BioJulia/FMIndexes.jl)
 [![GitHub latest release](https://img.shields.io/badge/stable-v0.2.0-green)](https://github.com/BioJulia/FMIndexes.jl/releases)
+[![Julia versions](https://img.shields.io/badge/julia-1.0+-blue)](https://julialang.org/)
 
 [FM-index](https://en.wikipedia.org/wiki/FM-index) is a static, compact, and fast index for full-text search.
 
