@@ -1,15 +1,15 @@
-using FMIndexes, Combinatorics, Test
+using FMIndexes, Combinatorics, Random, Test
 
-srand(12345)
+Random.seed!(12345)
 
 # simple DNA sequence type
 @enum Nuc A C G T
-type DNASeq
+struct DNASeq
     data::Vector{Nuc}
 end
 Base.getindex(seq::DNASeq, i::Integer) = seq.data[i]
 Base.length(seq::DNASeq) = length(seq.data)
-Base.endof(seq::DNASeq)  = length(seq.data)
+Base.lastindex(seq::DNASeq)  = length(seq.data)
 
 
 @testset "construct" begin
