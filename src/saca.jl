@@ -1,7 +1,7 @@
 # Suffix Array Construction Algorithms
 
 # a wrapper type for a sequence that returns byte-convertible elements
-immutable ByteSeq{S} <: AbstractVector{UInt8}
+struct ByteSeq{S} <: AbstractVector{UInt8}
     data::S
 end
 Base.size(seq::ByteSeq) = (length(seq.data),)
@@ -52,7 +52,7 @@ function load_sa(T, file, mmap)
     return sa
 end
 
-function load_sa!{T}(input::IO, sa::Vector{T})
+function load_sa!(input::IO, sa::Vector{T}) where {T}
     # load a suffix array from the `input` into `sa`
     buf = Vector{UInt8}(5)
     i = 0
@@ -79,7 +79,7 @@ function index_type(n)
 end
 
 # suffix array sampling
-function sample_sa{T}(sa::Vector{T}, r)
+function sample_sa(sa::Vector{T}, r) where {T}
     n = length(sa)
     samples = Vector{T}(cld(n, r))
     sampled = falses(n)
