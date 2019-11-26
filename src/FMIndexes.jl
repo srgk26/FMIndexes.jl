@@ -22,7 +22,7 @@ Type parameters:
 * `w`: the number of bits required to encode the alphabet
 * `T`: the type to represent positions of a sequence
 """
-immutable FMIndex{w,T}
+struct FMIndex{w,T}
     bwt::WaveletMatrix{w,UInt8,SucVector}
     sentinel::Int
     samples::Vector{T}
@@ -81,7 +81,7 @@ end
 
 Base.length(index::FMIndex) = length(index.bwt)
 
-function Base.show{w,T}(io::IO, fmindex::FMIndex{w,T})
+function Base.show(io::IO, fmindex::FMIndex{w,T}) where {w,T}
     println(io, summary(fmindex), ':')
     totalsize = (
         sizeof(fmindex.bwt) +
