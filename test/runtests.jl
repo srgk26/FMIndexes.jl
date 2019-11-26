@@ -1,6 +1,4 @@
-using FMIndexes
-using Combinatorics
-using Base.Test
+using FMIndexes, Combinatorics, Test
 
 srand(12345)
 
